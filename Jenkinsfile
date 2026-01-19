@@ -1,4 +1,3 @@
-📄 Jenkinsfile
 pipeline {
     agent any
 
@@ -6,20 +5,21 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-username/jenkins-python-project.git'
+                git 'https://github.com/Vaishnavi7028/jenkins-python-project.git'
+'
             }
         }
 
         stage('Setup Environment') {
             steps {
                 sh 'python -m venv venv'
-                sh 'venv/bin/pip install -r requirements.txt'
+                sh 'venv/Scripts/pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'venv/bin/pytest -v'
+                sh 'venv/Scripts/pytest -v'
             }
         }
     }
