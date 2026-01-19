@@ -6,20 +6,19 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git 'https://github.com/Vaishnavi7028/jenkins-python-project.git'
-'
             }
         }
 
         stage('Setup Environment') {
             steps {
-                sh 'python -m venv venv'
-                sh 'venv/Scripts/pip install -r requirements.txt'
+                bat 'python -m venv venv'
+                bat 'venv\\Scripts\\pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'venv/Scripts/pytest -v'
+                bat 'venv\\Scripts\\pytest -v'
             }
         }
     }
@@ -33,3 +32,4 @@ pipeline {
         }
     }
 }
+
